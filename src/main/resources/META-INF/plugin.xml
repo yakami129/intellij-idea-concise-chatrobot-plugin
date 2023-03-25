@@ -1,0 +1,26 @@
+<idea-plugin>
+    <id>org.example.intellij-idea-concise-chatrobot-plugin</id>
+    <name>ConciseChatRobotPlugin</name>
+    <vendor email="770748371@qq.com" url="https://github.com/yakami129">yakami129</vendor>
+
+    <description><![CDATA[
+    Enter short description for your plugin here.<br>
+    <em>most HTML tags may be used</em>
+    ]]></description>
+
+    <!-- please see https://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+         on how to target different products -->
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow id="chatrobot"  anchor="right" factoryClass="io.github.yakami129.concise.chatrobot.plugin.ChatrobotToolWindowFactory"/>
+        <applicationConfigurable parentId="tools" instance="io.github.yakami129.concise.chatrobot.plugin.config.AppSettingsConfigurable"
+                                 id="org.intellij.sdk.settings.AppSettingsConfigurable"
+                                 displayName="ChatRobot Setting"/>
+        <applicationService serviceImplementation="io.github.yakami129.concise.chatrobot.plugin.config.AppSettingsState"/>
+    </extensions>
+
+    <actions>
+        <!-- Add your actions here -->
+    </actions>
+</idea-plugin>
